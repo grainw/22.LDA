@@ -29,12 +29,14 @@ if __name__ == '__main__':
     print '读入语料数据完成，用时%.3f秒' % (time.time() - t_start)
     f.close()
     M = len(texts)
+    print M
     print '文本数目：%d个' % M
     # pprint(texts)
 
     print '正在建立词典 --'
     dictionary = corpora.Dictionary(texts)
     V = len(dictionary)
+    print V
     print '正在计算文本向量 --'
     corpus = [dictionary.doc2bow(text) for text in texts]
     print '正在计算文档TF-IDF --'
